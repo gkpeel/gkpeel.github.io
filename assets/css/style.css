@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Playfair+Display");
+/* Color Variables */
+/* Font Variables */
+/* Media Query Variables */
+body,
+html {
+  height: 100%;
+  font-family: "Open Sans", sans-serif; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-nav {
+  font-family: 'Playfair Display', serif; }
+
+a {
+  color: #ced8d8; }
+
+a:hover {
+  color: #be9798; }
+
+.hompage--background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url("https://res.cloudinary.com/gazelles-coaches/image/upload/q_auto/v1543450041/fishtown-hi-res.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed; }
+
+.layout__main {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: width 375ms ease-in-out; }
+
+.layout__main.active {
+  width: calc(100% - 250px); }
+
+.layout__main-container {
+  transition: margin 375ms ease-in-out; }
+
+.layout__main-container.active {
+  margin-right: 8px;
+  margin-left: 8px; }
+
+.wrapper {
+  display: flex;
+  width: 100%; }
+
+.sidebar__container {
+  height: 100vh;
+  width: 250px; }
+
+.layout__side-bar {
+  display: flex;
+  position: fixed;
+  min-width: 250px;
+  max-width: 250px;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  min-height: 100vh;
+  padding: 56px 32px;
+  background: #6d081a;
+  transition: margin 375ms ease-in-out; }
+
+.layout__side-bar.active {
+  margin-left: -250px; }
+
+.layout__side-bar li {
+  margin-bottom: 16px;
+  color: #ced8d8 !important; }
+
+#sidebar {
+  width: 100%; }
+
+.layout__side-bar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+  .layout__side-bar-container a {
+    color: #ced8d8; }
+
+#collapseToggle {
+  cursor: pointer; }
+
+.layout__navbar {
+  padding: 1.5rem 1rem; }
+
+.layout__navbar-nav .container-fluid {
+  padding-left: 0;
+  padding-right: 0; }
+
+.layout__navbar-nav .container-fluid .active {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.menu {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #6d081a; }
+
+.menu span {
+  margin: 0 auto;
+  position: relative;
+  top: 18px; }
+
+.menu span:before,
+.menu span:after {
+  position: absolute;
+  content: ''; }
+
+.menu span,
+.menu span:before,
+.menu span:after {
+  width: 30px;
+  height: 4px;
+  background-color: #ced8d8;
+  display: block; }
+
+.menu span:before {
+  margin-top: -12px; }
+
+.menu span:after {
+  margin-top: 12px; }
+
+.menu span {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  -webkit-transition-delay: 300ms;
+  transition-delay: 300ms; }
+
+.menu.active span {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-transition-delay: 300ms;
+  transition-delay: 300ms; }
+
+.menu span:before {
+  -webkit-transition-property: margin, -webkit-transform;
+  transition-property: margin, transform;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-delay: 300ms, 0s;
+  transition-delay: 300ms, 0s; }
+
+.menu.active span:before {
+  margin-top: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition-delay: 0s, 300ms;
+  transition-delay: 0s, 300ms; }
+
+.menu span:after {
+  -webkit-transition-property: margin, -webkit-transform;
+  transition-property: margin, transform;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-delay: 300ms, 0s;
+  transition-delay: 300ms, 0s; }
+
+.menu.active span:after {
+  margin-top: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition-delay: 0s, 300ms;
+  transition-delay: 0s, 300ms; }
+
+#main-content {
+  height: calc(100vh - 88px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#about-card,
+#intro-card,
+#portfolio-content {
+  background-color: rgba(109, 8, 26, 0.95);
+  color: #ced8d8;
+  padding: 3rem; }
+  #about-card .display-4,
+  #intro-card .display-4,
+  #portfolio-content .display-4 {
+    text-align: center; }
+  #about-card h2,
+  #about-card h3,
+  #intro-card h2,
+  #intro-card h3,
+  #portfolio-content h2,
+  #portfolio-content h3 {
+    font-family: "Open Sans", sans-serif;
+    text-align: center; }
+  #about-card i,
+  #intro-card i,
+  #portfolio-content i {
+    color: #ced8d8; }
+
+#intro-card {
+  width: 75%; }
+
+#about-card {
+  text-align: left; }
+  #about-card h2 {
+    font-weight: lighter; }
+
+#portfolio-content h3 {
+  text-align: left; }
+
+.intro-card--muted {
+  opacity: 0.6; }
+
+.social-links__container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem; }
+  .social-links__container a {
+    margin-left: 1rem;
+    margin-right: 1rem; }
+
+.buttons__container {
+  margin-top: 2.5rem;
+  width: 100%;
+  align-self: flex-end;
+  display: flex; }
+  .buttons__container a {
+    display: block;
+    text-align: center;
+    flex: 1 0 auto;
+    background-color: #ced8d8;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 4px;
+    color: #6d081a; }
+    .buttons__container a:hover {
+      text-decoration: none; }
+
+.about-page__button-container {
+  display: flex; }
+
+.button--white {
+  border-color: #ced8d8;
+  color: #ced8d8; }
+
+.button--third {
+  width: 33%; }
+
+.portfolio--button {
+  background-color: #ced8d8;
+  color: #6d081a; }
+
+.portfolio--button:hover {
+  color: #6d081a;
+  background-color: rgba(206, 216, 216, 0.85); }
+
+/*# sourceMappingURL=style.css.map */

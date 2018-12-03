@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Playfair+Display');
+
+/* Color Variables */
+$color-primary: #6d081a;
+$color-secondary: hsl(359, 23%, 67%);
+$color-tertiary: #ced8d8;
+
+/* Font Variables */
+$font-open-sans: 'Open Sans', sans-serif;
+$font-playfair: 'Playfair Display', serif;
+
+/* Media Query Variables */
+$device-sm: '(min-width: 576px)';
+$device-lg: '(min-width: 768px)';
+$device-lg: '(min-width: 992px)';
+$device-xl: '(min-width: 1200px)';
+$device-xxl: '(min-width: 1400px)';
+
+body,
+html {
+	height: 100%;
+	font-family: $font-open-sans;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-nav {
+	font-family: 'Playfair Display', serif;
+}
+
+a {
+	color: $color-tertiary;
+}
+
+a:hover {
+	color: $color-secondary;
+}
+
+.hompage--background {
+	background-image: linear-gradient(
+			rgba(0, 0, 0, 0.3) 0%,
+			rgba(0, 0, 0, 0.3) 100%
+		),
+		url('https://res.cloudinary.com/gazelles-coaches/image/upload/q_auto/v1543450041/fishtown-hi-res.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+}
+
+.layout__main {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transition: width 375ms ease-in-out;
+}
+
+.layout__main.active {
+	width: calc(100% - 250px);
+}
+.layout__main-container {
+	transition: margin 375ms ease-in-out;
+}
+
+.layout__main-container.active {
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+.wrapper {
+	display: flex;
+	width: 100%;
+}
+
+.sidebar__container {
+	height: 100vh;
+	width: 250px;
+}
+
+.layout__side-bar {
+	display: flex;
+	position: fixed;
+	min-width: 250px;
+	max-width: 250px;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	min-height: 100vh;
+	padding: 56px 32px;
+	background: $color-primary;
+	transition: margin 375ms ease-in-out;
+}
+
+.layout__side-bar.active {
+	margin-left: -250px;
+}
+
+.layout__side-bar li {
+	margin-bottom: 16px;
+	color: $color-tertiary !important;
+}
+
+#sidebar {
+	width: 100%;
+}
+
+.layout__side-bar-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	a {
+		color: $color-tertiary;
+	}
+}
+
+#collapseToggle {
+	cursor: pointer;
+}
+
+.layout__navbar {
+	padding: 1.5rem 1rem;
+}
+
+.layout__navbar-nav .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.layout__navbar-nav .container-fluid .active {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.menu {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: $color-primary;
+}
+
+.menu span {
+	margin: 0 auto;
+	position: relative;
+	top: 18px;
+}
+
+.menu span:before,
+.menu span:after {
+	position: absolute;
+	content: '';
+}
+
+.menu span,
+.menu span:before,
+.menu span:after {
+	width: 30px;
+	height: 4px;
+	background-color: $color-tertiary;
+	display: block;
+}
+
+.menu span:before {
+	margin-top: -12px;
+}
+
+.menu span:after {
+	margin-top: 12px;
+}
+
+.menu span {
+	-webkit-transition-duration: 0s;
+	transition-duration: 0s;
+	-webkit-transition-delay: 300ms;
+	transition-delay: 300ms;
+}
+
+.menu.active span {
+	background-color: rgba(0, 0, 0, 0);
+	-webkit-transition-delay: 300ms;
+	transition-delay: 300ms;
+}
+
+.menu span:before {
+	-webkit-transition-property: margin, -webkit-transform;
+	transition-property: margin, transform;
+	-webkit-transition-duration: 300ms;
+	transition-duration: 300ms;
+	-webkit-transition-delay: 300ms, 0s;
+	transition-delay: 300ms, 0s;
+}
+
+.menu.active span:before {
+	margin-top: 0;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transition-delay: 0s, 300ms;
+	transition-delay: 0s, 300ms;
+}
+
+.menu span:after {
+	-webkit-transition-property: margin, -webkit-transform;
+	transition-property: margin, transform;
+	-webkit-transition-duration: 300ms;
+	transition-duration: 300ms;
+	-webkit-transition-delay: 300ms, 0s;
+	transition-delay: 300ms, 0s;
+}
+
+.menu.active span:after {
+	margin-top: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-transition-delay: 0s, 300ms;
+	transition-delay: 0s, 300ms;
+}
+
+#main-content {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	right: 0;
+	// 	left: 0;
+	height: calc(100vh - 88px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#about-card,
+#intro-card,
+#portfolio-content {
+	background-color: rgba($color-primary, 0.95);
+	color: $color-tertiary;
+	padding: 3rem;
+	.display-4 {
+		text-align: center;
+	}
+	h2,
+	h3 {
+		font-family: $font-open-sans;
+		text-align: center;
+	}
+	i {
+		color: $color-tertiary;
+	}
+}
+
+#intro-card {
+	width: 75%;
+}
+
+#about-card {
+	text-align: left;
+	h2 {
+		font-weight: lighter;
+	}
+}
+
+#portfolio-content {
+	h3 {
+		text-align: left;
+	}
+}
+
+.intro-card--muted {
+	opacity: 0.6;
+
+	// font-weight: 300;
+}
+
+.social-links__container {
+	display: flex;
+	justify-content: center;
+	margin: 1.5rem;
+	a {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+}
+
+.buttons__container {
+	margin-top: 2.5rem;
+	width: 100%;
+	align-self: flex-end;
+	display: flex;
+	a {
+		display: block;
+		text-align: center;
+		flex: 1 0 auto;
+		background-color: $color-tertiary;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		border-radius: 4px;
+		color: $color-primary;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.about-page__button-container {
+	display: flex;
+}
+
+.button--white {
+	border-color: $color-tertiary;
+	color: $color-tertiary;
+}
+
+.button--third {
+	width: 33%;
+}
+
+.portfolio--button {
+	background-color: $color-tertiary;
+	color: $color-primary;
+}
+
+.portfolio--button:hover {
+	color: $color-primary;
+	background-color: rgba($color-tertiary, 0.85);
+}
